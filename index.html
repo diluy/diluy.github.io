@@ -1,0 +1,252 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>计算机中的`八股文` - 每日一篇技术文档</title><meta name="description"><meta name="keywords" content="diluy,生活,PHP"><meta name="author" content="diluy"><meta name="copyright" content="diluy"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://diluy.github.io/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="计算机中的`八股文`"><meta property="og:url" content="http://diluy.github.io/"><meta property="og:site_name" content="计算机中的`八股文`"><meta property="og:description"><meta property="og:image" content="https://i.loli.net/2020/07/20/rQR7vNly45fYsen.jpg"><meta property="article:published_time" content="2021-01-19T05:42:03.566Z"><meta property="article:modified_time" content="2021-01-19T05:42:03.566Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false,
+  postUpdate: '2021-01-19 13:42:03'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="https://i.loli.net/2020/07/20/rQR7vNly45fYsen.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">4</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">5</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/categories/%E6%97%85%E6%B8%B8"><i class="fa-fw fas fa-plane"></i><span> 旅游</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://i.loli.net/2020/07/20/iQJyeUGrou4T3IV.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">计算机中的`八股文`</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/categories/%E6%97%85%E6%B8%B8"><i class="fa-fw fas fa-plane"></i><span> 旅游</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">计算机中的`八股文`</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/diluy" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/08/04/MySQL%E6%85%A2%E6%9F%A5%E8%AF%A2%E4%B8%80%E6%96%87%E6%90%9E%E5%AE%9A/" title="MySQL慢查询一文搞定">MySQL慢查询一文搞定</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-04T06:25:42.000Z" title="发表于 2020-08-04 14:25:42">2020-08-04</time></span></div><div class="content">一、影响MySQL慢的原因
+我们在工作中，多多少少会遇到MySQL查询速度慢的问题，究其根本就是MySQL是将数据存储到磁盘中。磁盘IO成为了限制性能的主要瓶颈。
+
+我们先来简单回忆一下计算机运行的原因，CPU通过总线按照预定程序，先从磁盘中加载数据进行计算。但是CPU的速度与磁盘的速度天差地别。
+因此，缓存 一种速度和容量介于CPU和磁盘之间的产物，用于提前预加载可能需要用到的数据的中间层就诞生了。
+除了磁盘IO这个主要因素之外，很多东西都是制约MySQL性能的指标。
+例如：CPU、内存、总线、操作系统等等。
+MySQL查询慢实在是意料之中的事情，不必过于紧张，只需要一点点排查即可。
+二、如何记录MySQL慢查询
+在准备优化之前，我们得先知道我们的系统出现了慢查询。不用着急，MySQL提供了慢查询的记录工具辅助我们。
+
+在my.cnf这个配置文件中，我们可以直接启用慢查询日志，将查询速度过慢的语句记录到日志中，方便后面排查。
+123slow_query_log&#x3D;1 # 0关闭 1开启slow_query_log_file&#x3D;&#x2F;var&#x2F;logs&# ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/07/20/Linux%E4%B8%8B%E7%9A%84%E8%B0%83%E8%AF%95%E7%A5%9E%E5%99%A8GDB/" title="Linux下的调试神器GDB">Linux下的调试神器GDB</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-07-20T05:57:11.000Z" title="发表于 2020-07-20 13:57:11">2020-07-20</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span></div><div class="content">gdb是什么
+gdb是Linux下的调试工具，可以单步断点。不仅仅可以用于C语言的调试，可以用于PHP、Python等语言的调试。
+
+使用gdb断点调试
+首先需要安装gdb，同时源码文件应当同时存在。
+
+编写一个简单的C程序12345678910#include&lt;stdio.h&gt;int main()&#123;  int a = 0;  int b = 10;  int c = a+b+1;  printf("result:%d\n",c);  printf("Hello Word!");  return 0;&#125;
+
+先编译这个文件得到可执行文件
+1gcc -g -o test test.c
+
+使用-g参数是编译时生成debug有关的程序信息(供gdb使用)
+
+通过gdb运行可执行文件1gdb ./test
+
+
+设置断点
+设置断点通过b或者breakpoints设定断点行号
+
+
+我们在第四行和第八行打断点
+运行程序
+通过r或者running指令开始进行调试通过l或者list指令查看代码
+
+
+打印变量值
+通过p或者print可以查看变量的值通过n或者next执行到下一 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/07/20/Linux%E4%B8%8B%E7%9A%84%E8%B0%83%E8%AF%95%E7%A5%9E%E5%99%A8strace/" title="Linux下的调试神器strace">Linux下的调试神器strace</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-07-20T03:29:12.000Z" title="发表于 2020-07-20 11:29:12">2020-07-20</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span></div><div class="content">在使用Linux环境时，我们总会遇到一些稀奇古怪的问题很难定位。
+但是受一位大佬的影响，任何异常情况都值得警惕，超出预期的效果就是BUG。
+因此即使问题很难定位、复现，我们也要追根溯源找到真正的原因。
+再定位问题的时候，Linux有个很好用的工具–strace
+strace可以让你追踪一个进程在运行时究竟进行了哪些系统调用(syscall)
+什么是系统调用
+系统调用(syscall) 是操作系统针对计算机资源管理的一种封装，使得使用操作系统的人不需要关心底层硬件交互而直接进行资源的操作。例如你想把数据写入到磁盘中，作为程序员的你绝对不想去了解机械硬盘跟固态硬盘不同写盘的底层实现。而操作系统提供的write调用让你可以无视底层直接写入数据到磁盘中。系统调用是操作系统提供，不同操作系统不一样。本文仅针对Linux系统进行讨论。
+
+系统调用常见类型
+文件/网络操作
+进程控制
+系统控制
+内存管理
+网络管理
+用户管理
+
+
+更多系统调用详细信息可以通过man syscalls进行查看
+
+通过strace查看系统调用统计
+场景: 整体负载很高，但是不知道怎么开始查询
+
+针对服务器负载很高的情况，我们 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2015/09/07/%E7%83%9F%E8%8A%B1%E4%B8%89%E6%9C%88%E4%B8%8B%E6%89%AC%E5%B7%9E/" title="烟花三月下扬州">烟花三月下扬州</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2015-09-06T16:00:00.000Z" title="发表于 2015-09-07 00:00:00">2015-09-07</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%97%85%E6%B8%B8/">旅游</a></span></div><div class="content">扬州之旅学校在镇江，与扬州一江之隔。若不游玩一番，颇为血亏。故此打包行囊，简装北上渡江。
+先至渡口，准备过江。
+
+
+景点文昌阁下船后，公交1小时至文昌阁。
+
+
+看之甚无味，皆因白天之故。奈何当时不知夜景美且学生不能在外过夜，故此错失良机。
+扬州八怪纪念馆
+
+犹记门票15，学生半价，遂以8元入内。
+
+
+看完主厅，换到侧厅。
+
+
+
+
+没啥艺术细胞，遂逃之。
+东关街
+
+街上没啥看头，进入个园。门票45，学生票半价。
+
+
+
+
+
+换个区域逛逛
+
+
+
+
+
+
+叫不上是什么花
+
+
+
+
+
+来个全景
+
+溜了溜了
+
+朱自清故居对这个本家不好奇，就单纯路过了一下。
+
+
+何园
+
+
+
+还是花草虫鸟
+
+
+
+
+
+
+
+
+
+
+逛完收工
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="https://i.loli.net/2020/07/20/rQR7vNly45fYsen.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">diluy</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">4</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">5</div></a></div><div class="card-info-data-item is-center"><a href="/categories"><div class="headline">分类</div><div class="length_num">2</div></a></div></div><a class="button--animated" id="card-info-btn" href="https://github.com/diluy" target="_blank" rel="noopener"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/diluy" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客，请随便逛逛。</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><div class="aside-post-info no-aside-cover"><a class="aside-post-title" href="/2020/08/04/MySQL%E6%85%A2%E6%9F%A5%E8%AF%A2%E4%B8%80%E6%96%87%E6%90%9E%E5%AE%9A/" title="MySQL慢查询一文搞定">MySQL慢查询一文搞定</a><time class="aside-post_meta post-meta-date" datetime="2020-08-04T06:25:42.000Z" title="发表于 2020-08-04 14:25:42">2020-08-04</time></div></div><div class="aside-recent-post"><div class="aside-post-info no-aside-cover"><a class="aside-post-title" href="/2020/07/20/Linux%E4%B8%8B%E7%9A%84%E8%B0%83%E8%AF%95%E7%A5%9E%E5%99%A8GDB/" title="Linux下的调试神器GDB">Linux下的调试神器GDB</a><time class="aside-post_meta post-meta-date" datetime="2020-07-20T05:57:11.000Z" title="发表于 2020-07-20 13:57:11">2020-07-20</time></div></div><div class="aside-recent-post"><div class="aside-post-info no-aside-cover"><a class="aside-post-title" href="/2020/07/20/Linux%E4%B8%8B%E7%9A%84%E8%B0%83%E8%AF%95%E7%A5%9E%E5%99%A8strace/" title="Linux下的调试神器strace">Linux下的调试神器strace</a><time class="aside-post_meta post-meta-date" datetime="2020-07-20T03:29:12.000Z" title="发表于 2020-07-20 11:29:12">2020-07-20</time></div></div><div class="aside-recent-post"><div class="aside-post-info no-aside-cover"><a class="aside-post-title" href="/2015/09/07/%E7%83%9F%E8%8A%B1%E4%B8%89%E6%9C%88%E4%B8%8B%E6%89%AC%E5%B7%9E/" title="烟花三月下扬州">烟花三月下扬州</a><time class="aside-post_meta post-meta-date" datetime="2015-09-06T16:00:00.000Z" title="发表于 2015-09-07 00:00:00">2015-09-07</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Linux/"><span class="card-category-list-name">Linux</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%97%85%E6%B8%B8/"><span class="card-category-list-name">旅游</span><span class="card-category-list-count">1</span></a></li>
+                       
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/GDB/" style="font-size: 16px; color: #999">GDB</a> <a href="/tags/Linux/" style="font-size: 22px; color: #99a9bf">Linux</a> <a href="/tags/MySQL/" style="font-size: 16px; color: #999">MySQL</a> <a href="/tags/strace/" style="font-size: 16px; color: #999">strace</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 16px; color: #999">优化</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/08/"><span class="card-archive-list-date">八月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/07/"><span class="card-archive-list-date">七月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2015/09/"><span class="card-archive-list-date">九月 2015</span><span class="card-archive-list-count">1</span></a></li></ul></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2021 By diluy</div><div class="framework-info"><span>框架 </span><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener">Butterfly</a></div><div class="icp"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener"><img class="icp-icon" src="/img/icp.png"/><span>宁ICP备2020003879号-2</span></a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><div class="js-pjax"><script>function subtitleType () {
+  $.getScript('http://yijuzhan.com/api/word.php?m=js', function () {
+    var con = str[0]
+    if (true) {
+      var from = '出自 ' + str[1]
+      var sub = "".length == 0 ? new Array() : "".split(',')
+      var both = sub.unshift(con, from)
+      var typed = new Typed('#subtitle', {
+        strings: sub,
+        startDelay: 300,
+        typeSpeed: 150,
+        loop: true,
+        backSpeed: 50,
+      })
+    } else {
+      document.getElementById('subtitle').innerHTML = con
+    }
+  })
+}
+
+if (true) {
+  if (typeof Typed === 'function') subtitleType()
+  else $.getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js', subtitleType)
+} else {
+  subtitleType()
+}
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
